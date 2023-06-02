@@ -8,8 +8,14 @@ servers:
           - https
           - http
         default: https
-  - url: http://192.168.1.1
-    variables: {}
+  - url: '{scheme}://192.168.1.1'
+    variables:
+      scheme:
+        default: http
+        enum:
+          - https
+          - http
+        description: Use HTTP only
 info:
   description: >-
     The Data Set API (DSAPI) allows the public users to discover and search
